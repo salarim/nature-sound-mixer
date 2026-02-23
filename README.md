@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nature Sound - Ambient Sound Mixer
+
+A web app that lets you mix ambient sounds to create your perfect environment for focus, relaxation, or sleep. Built with Next.js, React, and the Web Audio API.
+
+## Features
+
+- **10 ambient sounds** — Rain, Thunder, Wind, Birds, Ocean, Fire, Stream, Night Crickets, Coffee Shop, Leaves
+- **Individual volume control** — Adjust each sound independently
+- **Master volume** — Control overall mix level
+- **Gapless looping** — Seamless audio loops via Web Audio API
+- **Pause / Stop all** — Global playback controls
+- **Click-free transitions** — Fade in/out ramps prevent audio pops
+- **Dark theme** — Color-coded sound cards with glow effects
+- **Responsive** — 2-5 column grid adapts to screen size
+
+## Tech Stack
+
+- **Next.js 14** (App Router)
+- **React** with custom hooks
+- **Tailwind CSS**
+- **Web Audio API** for mixing and looping
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with dark theme
+│   ├── page.tsx            # Main page
+│   └── globals.css         # Global styles + range slider styling
+├── components/
+│   ├── SoundBoard.tsx      # Grid of sound cards
+│   ├── SoundCard.tsx       # Individual sound toggle + volume
+│   └── MasterControls.tsx  # Play/pause, stop all, master volume
+├── hooks/
+│   └── useAudioEngine.ts   # Web Audio API hook for mixing
+└── data/
+    └── sounds.ts           # Sound metadata (name, icon, file, color)
+```
 
-## Learn More
+## Audio Sources
 
-To learn more about Next.js, take a look at the following resources:
+All sounds are sourced from [Mixkit](https://mixkit.co/free-sound-effects/) under the Mixkit License (free for commercial and personal use).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
